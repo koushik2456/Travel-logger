@@ -1,13 +1,18 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Time Travel Logger</title>
+    <meta charset="UTF-8">
+    <title>Chrono Pipe</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>Time Travel Logger</h1>
-  <button onclick="callBackend()">Ping Server</button>
-  <p id="output"></p>
-
-  <script src="app.js"></script>
+    <div class="container">
+        <h1>🦊 Chrono Pipe</h1>
+        <input type="text" id="query" placeholder="Ask something...">
+        <button onclick="sendQuery()">Ask</button>
+        <div id="responseArea"></div>
+        <canvas id="activityChart"></canvas>
+    </div>
+    <script src="script.js"></script>
 </body>
 </html>
