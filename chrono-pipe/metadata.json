@@ -1,0 +1,26 @@
+[
+    {
+      "id": 1,
+      "name": "Working on VS Code",
+      "filename": "vscode_2025-04-21_10-15-30.png",
+      "timestamp": "2025-04-21_10-15-30",
+      "datetime": "2025-04-21 10:15:30",
+      "path": "../screenshots/vscode_2025-04-21_10-15-30.png"
+    },
+    {
+      "id": 2,
+      "name": "Watching YouTube",
+      "filename": "youtube_2025-04-21_18-00-05.png",
+      "timestamp": "2025-04-21_18-00-05",
+      "datetime": "2025-04-21 18:00:05",
+      "path": "../screenshots/youtube_2025-04-21_18-00-05.png"
+    },
+    {
+      "id": 3,
+      "name": "Reading Documentation",
+      "filename": "docs_2025-04-21_14-30-12.png",
+      "timestamp": "2025-04-21_14-30-12",
+      "datetime": "2025-04-21 14:30:12",
+      "path": "../screenshots/docs_2025-04-21_14-30-12.png"
+    }
+  ]

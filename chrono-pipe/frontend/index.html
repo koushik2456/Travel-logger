@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Logger</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Your digital screen time Travel logger Logger</h1>
+            <p>Track your digital journey through automated screenshots</p>
+        </header>
+
+        <div class="main-content">
+            <div class="capture-section">
+                <h2>Capture Your Screen</h2>
+                <div class="form-group">
+                    <label for="screenshot-name">Screenshot Name (optional):</label>
+                    <input type="text" id="screenshot-name" placeholder="Enter a descriptive name">
+                </div>
+                <button id="capture-btn" class="btn primary-btn">Capture Screenshot</button>
+                <div id="capture-status" class="status-message"></div>
+            </div>
+
+            <div class="query-section">
+                <h2>Query Your Screenshots</h2>
+                <div class="form-group">
+                    <label for="query-input">Ask about your activities:</label>
+                    <input type="text" id="query-input" placeholder="e.g., What was I doing yesterday at 6pm?">
+                </div>
+                <button id="query-btn" class="btn secondary-btn">Search</button>
+                <div id="query-status" class="status-message"></div>
+            </div>
+
+            <div class="results-section">
+                <h2>Results</h2>
+                <div id="query-results" class="results-container">
+                    <p id="explanation"></p>
+                    <div id="screenshots-container" class="screenshots-grid"></div>
+                </div>
+            </div>
+
+            <div class="gallery-section">
+                <h2>Screenshot Gallery</h2>
+                <div id="gallery" class="gallery-grid"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
