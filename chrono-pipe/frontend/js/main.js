@@ -1,8 +1,8 @@
-// API endpoints
-const API_BASE_URL = 'http://localhost:5000';
-const CAPTURE_ENDPOINT = `${API_BASE_URL}/capture`;
-const SCREENSHOTS_ENDPOINT = `${API_BASE_URL}/screenshots`;
-const QUERY_ENDPOINT = `${API_BASE_URL}/query`;
+// API endpoints - Use relative URLs instead of absolute URLs
+const API_BASE_URL = ''; // Empty string for relative URLs
+const CAPTURE_ENDPOINT = `/capture`;
+const SCREENSHOTS_ENDPOINT = `/screenshots`;
+const QUERY_ENDPOINT = `/query`;
 
 // DOM elements
 const captureBtn = document.getElementById('capture-btn');
@@ -34,6 +34,10 @@ async function captureScreenshot() {
             body: JSON.stringify({ name })
         });
         
+        if (!response.ok) {
+            throw new Error(`Server returned ${response.status}: ${response.statusText}`);
+        }
+        
         const data = await response.json();
         
         if (data.success) {
@@ -57,6 +61,11 @@ async function captureScreenshot() {
 async function loadGallery() {
     try {
         const response = await fetch(SCREENSHOTS_ENDPOINT);
+        
+        if (!response.ok) {
+            throw new Error(`Server returned ${response.status}: ${response.statusText}`);
+        }
+        
         const screenshots = await response.json();
         
         if (screenshots.length === 0) {
@@ -102,6 +111,10 @@ async function queryScreenshots() {
             body: JSON.stringify({ query })
         });
         
+        if (!response.ok) {
+            throw new Error(`Server returned ${response.status}: ${response.statusText}`);
+        }
+        
         const data = await response.json();
         
         if (data.success) {
@@ -113,6 +126,11 @@ async function queryScreenshots() {
             
             // Get all screenshots metadata for showing results
             const screenshotsResponse = await fetch(SCREENSHOTS_ENDPOINT);
+            
+            if (!screenshotsResponse.ok) {
+                throw new Error(`Server returned ${screenshotsResponse.status}: ${screenshotsResponse.statusText}`);
+            }
+            
             const allScreenshots = await screenshotsResponse.json();
             
             // Find matching screenshots
@@ -147,7 +165,7 @@ function createScreenshotElement(screenshot) {
     
     const img = document.createElement('img');
     img.className = 'screenshot-img';
-    img.src = `${API_BASE_URL}/screenshots/${screenshot.filename}`;
+    img.src = `/screenshots/${screenshot.filename}`; // Using relative URL
     img.alt = screenshot.name;
     
     const info = document.createElement('div');
